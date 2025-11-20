@@ -324,8 +324,8 @@ plt.title("Policy Iteration – Convergence of Policy Evaluation")
 plt.grid(True, linestyle='--', alpha=0.6)
 plt.legend()
 plt.tight_layout()
+plt.savefig(r"C:\Users\kchao\OneDrive\Documents\Dossier_Malek\KU\KU 4th Year Courses\EECS 658\CodingAssignments\CodingAssignments\MalekKchaou_Assignment7\Policy_Iteration_Convergence_Plot.png")
 plt.show()
-
 
 
 # ==============================================================================
@@ -455,5 +455,6 @@ plt.title("Value Iteration Convergence")
 plt.grid(True, linestyle='--', alpha=0.6)
 plt.legend()
 plt.tight_layout()
+plt.savefig(r"C:\Users\kchao\OneDrive\Documents\Dossier_Malek\KU\KU 4th Year Courses\EECS 658\CodingAssignments\CodingAssignments\MalekKchaou_Assignment7\Value_Iteration_Convergence_Plot.png")
 plt.show()
 
