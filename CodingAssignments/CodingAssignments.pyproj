@@ -1,0 +1,78 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>9f4df5eb-9cea-4c61-869a-79f57ed68942</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>MalekKchaou_Assignment1\CheckVersions.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>CodingAssignments</Name>
+    <RootNamespace>CodingAssignments</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="MalekKchaou_Assignment1\CheckVersions.py" />
+    <Compile Include="MalekKchaou_Assignment1\NBClassifier.py" />
+    <Compile Include="MalekKchaou_Assignment2\CompareMLModels.py" />
+    <Compile Include="MalekKchaou_Assignment3\CompareMLModelsV2.py" />
+    <Compile Include="MalekKchaou_Assignment3\dbn.py" />
+    <Compile Include="MalekKchaou_Assignment3\dbn\activations.py" />
+    <Compile Include="MalekKchaou_Assignment3\dbn\models.py" />
+    <Compile Include="MalekKchaou_Assignment3\dbn\tensorflow\models.py" />
+    <Compile Include="MalekKchaou_Assignment3\dbn\tensorflow\__init__.py" />
+    <Compile Include="MalekKchaou_Assignment3\dbn\utils.py" />
+    <Compile Include="MalekKchaou_Assignment3\dbn\__init__.py" />
+    <Compile Include="MalekKchaou_Assignment4\CompareFeatureSelectionMethods.py" />
+    <Compile Include="MalekKchaou_Assignment5\ImbalancedIris.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.10</Version>
+      <Description>env (Python 3.10 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MalekKchaou_Assignment1\" />
+    <Folder Include="MalekKchaou_Assignment2\" />
+    <Folder Include="MalekKchaou_Assignment3\" />
+    <Folder Include="MalekKchaou_Assignment3\dbn\" />
+    <Folder Include="MalekKchaou_Assignment3\dbn\tensorflow\" />
+    <Folder Include="MalekKchaou_Assignment4\" />
+    <Folder Include="MalekKchaou_Assignment5\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MalekKchaou_Assignment1\iris.csv" />
+    <Content Include="MalekKchaou_Assignment2\iris.csv" />
+    <Content Include="MalekKchaou_Assignment3\CompareMLModelsV2_Results1.png" />
+    <Content Include="MalekKchaou_Assignment3\CompareMLModelsV2_Results2.png" />
+    <Content Include="MalekKchaou_Assignment3\CompareMLModelsV2_Results3.png" />
+    <Content Include="MalekKchaou_Assignment3\iris.csv" />
+    <Content Include="MalekKchaou_Assignment4\iris.csv" />
+    <Content Include="MalekKchaou_Assignment5\imbalanced iris.csv" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

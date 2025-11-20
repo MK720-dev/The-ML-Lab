@@ -1,0 +1,21 @@
+# Python
+env/
+venv/
+__pycache__/
+*.pyc
+
+# Visual Studio / VSCode
+.vs/
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Tensorflow build/artifacts
+*.pb
+*.h5
+*.ckpt*
+
+# OS files
+.DS_Store
+Thumbs.db
