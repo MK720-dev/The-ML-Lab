@@ -112,7 +112,7 @@ It investigates unsupervised clustering approaches applied to the Iris dataset.
 
 ---
 
-## 📌 Part 1 — K-Means Clustering
+## Part 1 — K-Means Clustering
 - Run K-Means for k = 1 → 20  
 - Plot **reconstruction error vs k**  
 - Identify **elbow_k** manually  
@@ -122,7 +122,7 @@ It investigates unsupervised clustering approaches applied to the Iris dataset.
 - Print confusion matrix and accuracy (only if k = 3)
 - Answer **Question 1** about number of species implied by elbow_k
 
-## 📌 Part 2 — Gaussian Mixture Models (GMM)
+## Part 2 — Gaussian Mixture Models (GMM)
 - Run GMM for k = 1 → 20  
 - Plot **AIC vs k** → pick **aic_elbow_k**  
 - Plot **BIC vs k** → pick **bic_elbow_k**  
@@ -134,7 +134,7 @@ It investigates unsupervised clustering approaches applied to the Iris dataset.
   - **Question 2a** — AIC interpretation  
   - **Question 2b** — BIC interpretation
 
-## 📌 Part 3 — Self-Organizing Map (SOM)
+## Part 3 — Self-Organizing Map (SOM)
 - Normalize features to the range [0,1]
 - Train MiniSom maps of sizes:
   - 3×3  
