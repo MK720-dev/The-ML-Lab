@@ -1,6 +1,12 @@
-<p align="center">
-  <img src="https://via.placeholder.com/1200x240.png?text=THE+ML+LAB" alt="The ML Lab Banner"/>
-</p>
+████████╗██╗  ██╗███████╗     ███╗   ███╗██╗     
+╚══██╔══╝██║  ██║██╔════╝     ████╗ ████║██║     
+   ██║   ███████║█████╗       ██╔████╔██║██║     
+   ██║   ██╔══██║██╔══╝       ██║╚██╔╝██║██║     
+   ██║   ██║  ██║███████╗     ██║ ╚═╝ ██║███████╗
+   ╚═╝   ╚═╝  ╚═╝╚══════╝     ╚═╝     ╚═╝╚══════╝
+     
+            THE   ML   LAB
+
 
 <h1 align="center">🧪 The-ML-Lab</h1>
 <h3 align="center">KU EECS 658 — Introduction to Machine Learning</h3>
