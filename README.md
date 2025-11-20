@@ -19,7 +19,7 @@
 </p>
 
 # Repository Structure
-
+'''
 The-ML-Lab/
 │
 ├── README.md
@@ -81,7 +81,7 @@ The-ML-Lab/
     ├── GridWorld.py
     ├── Rubric 7.docx
     └── results/
-
+'''
 
 # Assignment 1 — CheckVersions & NBClassifier
 
