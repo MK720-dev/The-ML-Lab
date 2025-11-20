@@ -22,11 +22,11 @@
 
 This assignment implements:
 
-### ✔ Part 1: CheckVersions  
+### Part 1: CheckVersions  
 Prints the versions of Python, SciPy, NumPy, Pandas, and scikit-learn  
 (as required in Assignment 1 instructions).
 
-### ✔ Part 2: NBClassifier  
+### Part 2: NBClassifier  
 Implements 2-fold cross-validation on the iris dataset using GaussianNB and prints:
 
 - Accuracy  
@@ -39,7 +39,7 @@ All calculations match the rubric requirements.
 
 # Assignment 2 — CompareMLModels
 
-Implements 2-fold CV across seven models (LinearReg, Poly2, Poly3, NB, kNN, LDA, QDA) per Assignment 2 specifications :contentReference[oaicite:1]{index=1}.
+Implements 2-fold CV across seven models (LinearReg, Poly2, Poly3, NB, kNN, LDA, QDA) per Assignment 2 specifications.
 
 For each model, the program prints:
 
@@ -56,7 +56,7 @@ All confusion matrices sum to 150 samples as required.
 ### ✔ CompareMLModelsV2  
 Expands the model comparison to 12 ML models including  
 SVM, Decision Tree, Random Forest, ExtraTrees, and MLPClassifier  
-(as required in Assignment 3 instructions :contentReference[oaicite:2]{index=2}).
+(as required in Assignment 3 instructions).
 
 ### ✔ DBN Implementation  
 Includes `dbn.py` and the DBN folder. Outputs accuracy on MNIST.
@@ -68,7 +68,7 @@ All answers (train/test sizes, class listing, CV usage, etc.) are included.
 
 # Assignment 4 — Feature Selection Techniques
 
-Implements four parts based on Assignment 4 instructions :contentReference[oaicite:3]{index=3}:
+Implements four parts based on Assignment 4 instructions:
 
 ## Part 1  
 Baseline Decision Tree using original 4 iris features.
@@ -90,7 +90,7 @@ Includes all required outputs and PoV spreadsheet verification.
 
 # Assignment 5 — Imbalanced Iris Dataset
 
-Follows Assignment 5 specifications :contentReference[oaicite:4]{index=4}.
+Follows Assignment 5 specifications.
 
 ## Part 1  
 Compute confusion matrix, accuracy, class-balanced accuracy, and sklearn balanced accuracy.
@@ -153,7 +153,7 @@ It investigates unsupervised clustering approaches applied to the Iris dataset.
 
 # Assignment 7 — Gridworld RL (Policy Iteration & Value Iteration)
 
-Implements the full 5×5 Gridworld per instructions :contentReference[oaicite:5]{index=5}.
+Implements the full 5×5 Gridworld per instructions.
 
 ## Part 1 — Policy Iteration  
 - Policy evaluation  
