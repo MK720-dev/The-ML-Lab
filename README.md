@@ -29,7 +29,6 @@ The-ML-Lab/
 │   └── logo.svg
 │
 ├── Assignment1_CheckVersions_NBClassifier/
-│   ├── README.md
 │   ├── CheckVersions.py
 │   ├── NBClassifier.py
 │   ├── iris.csv
@@ -37,7 +36,6 @@ The-ML-Lab/
 │   └── results/
 │
 ├── Assignment2_CompareMLModels/
-│   ├── README.md
 │   ├── CompareMLModels.py
 │   ├── iris.csv
 │   ├── EECS658_Assignment2.pdf
@@ -45,7 +43,6 @@ The-ML-Lab/
 │   └── results/
 │
 ├── Assignment3_ModelComparisonV2_DBN/
-│   ├── README.md
 │   ├── CompareMLModelsV2.py
 │   ├── dbn.py
 │   ├── dbn/
@@ -54,7 +51,6 @@ The-ML-Lab/
 │   └── results/
 │
 ├── Assignment4_PCA_SA_GA/
-│   ├── README.md
 │   ├── CompareFeatureSelectionMethods.py
 │   ├── iris.csv
 │   ├── PoV.xlsx
@@ -62,14 +58,12 @@ The-ML-Lab/
 │   └── results/
 │
 ├── Assignment5_ImbalancedLearning/
-│   ├── README.md
 │   ├── ImbalancedIris.py
 │   ├── imbalanced iris.csv
 │   ├── Rubric 5.docx
 │   └── results/
 │
 ├── Assignment6_UnsupervisedClustering/
-│   ├── README.md
 │   ├── CompareClusters.py
 │   ├── PlottingCode.py
 │   ├── iris.csv
@@ -77,7 +71,6 @@ The-ML-Lab/
 │   └── plots/
 │
 └── Assignment7_Gridworld_RL/
-    ├── README.md
     ├── GridWorld.py
     ├── Rubric 7.docx
     └── results/
@@ -285,32 +278,35 @@ The PDF answers include answers to:
 
 ---
 
-## **📌 Part 2 — Deep Belief Network (DBN)**
+## **PART 2 — Deep Belief Network (DBN) on the MNIST Dataset**
 
-This part uses the **MNIST digit recognition** dataset and implements a Deep Belief Network based on the public GitHub repository:
+Part 2 of Assignment 3 introduces a **Deep Belief Network (DBN)** for handwritten digit classification using the MNIST dataset.  
+The goal is to learn:
+- How an unsupervised layer-wise pretraining pipeline works  
+- How DBNs differ from traditional feed-forward neural networks  
+- How to interpret MNIST dataset shapes (samples, features, classes)  
+- How to debug and run real deep learning code
 
-🔗 https://github.com/albertbup/deep-belief-network
+All instructions in this part must be followed **exactly as specified**.  
+:contentReference[oaicite:1]{index=1}
 
-### ✔ **Required Setup Steps**
-Following assignment instructions strictly:
+---
 
-1. Download the Deep Belief Network ZIP from GitHub.  
-2. Copy the **`dbn/` folder** into the same directory as your Python file.  
-3. Create a new file named **`dbn.py`** in that same directory.  
-4. Copy the code from the repository’s *Overview* section (from `import numpy as np` down to the final accuracy print).  
-5. Modify the import:  
-   - Use:  
-     ```python
-     from dbn import SupervisedDBNClassification
-     ```  
-   - And comment out:  
-     ```python
-     from dbn.tensorflow import SupervisedDBNClassification
-     ```
-6. Replace the deprecated import:  
+# 📌 **Required Setup (Must Follow Exactly)**
+
+1. Download the GitHub ZIP file containing the DBN library:  
+   👉 https://github.com/albertbup/deep-belief-network  
+
+2. Extract the ZIP and **copy the entire `dbn/` folder** into your assignment directory  
+   (the same directory containing your `dbn.py` file).
+
+3. Create a new file called **`dbn.py`**  
+   (This file will run the MNIST experiment.)
+
+4. From the GitHub page, copy the complete code shown in the “Overview” section  
+   — beginning at:  
    ```python
-   from sklearn.metrics.classification import accuracy_score
-
+   import numpy as np
 
 ---
 
@@ -463,86 +459,280 @@ python CompareFeatureSelectionMethods.py
 
 ---
 
-# Assignment 5 — Imbalanced Iris Dataset
+### **Assignment 5 – Imbalanced Iris Dataset (Oversampling & Undersampling Techniques)**  
+**Folder:** `MalekKchaou_Assignment5`
 
-Follows Assignment 5 specifications.
-
-## Part 1  
-Compute confusion matrix, accuracy, class-balanced accuracy, and sklearn balanced accuracy.
-
-## Part 2 — Oversampling  
-Random Oversampling, SMOTE, ADASYN.
-
-## Part 3 — Undersampling  
-Random undersampling, ClusterCentroids, Tomek Links.
-
-Each section prints labeled confusion matrices and accuracy.
+This assignment focuses on handling **imbalanced datasets** using oversampling and undersampling techniques from the *imbalanced-learn* package.  
+All experiments must use **2-fold cross-validation** with a **Neural Network classifier**.  
+:contentReference[oaicite:1]{index=1}
 
 ---
 
-# Assignment 6 — Unsupervised Machine Learning (K-Means, GMM, SOM)
+## **📌 Deliverables (as required in the instructions)**
 
-This assignment follows the official EECS 658 instructions exactly.  
-It investigates unsupervised clustering approaches applied to the Iris dataset.
+The assignment folder contains:
+
+- ✔ `ImbalancedIris.py` (main program)  
+- ✔ `imbalanced iris.csv` (provided dataset)  
+- ✔ `Rubric 5.docx` (with name + ID, must NOT be PDF)  
+- ✔ A **screen print** showing successful program execution  
+  - Required — the grader does **not** run your code  
+- ✔ Result images for Part 1, 2, and 3
 
 ---
 
-## Part 1 — K-Means Clustering
-- Run K-Means for k = 1 → 20  
-- Plot **reconstruction error vs k**  
-- Identify **elbow_k** manually  
-- Use predict() with clusters for:
-  - **k = elbow_k**
-  - **k = 3**
-- Print confusion matrix and accuracy (only if k = 3)
-- Answer **Question 1** about number of species implied by elbow_k
+## **📌 Global Requirements**
 
-## Part 2 — Gaussian Mixture Models (GMM)
-- Run GMM for k = 1 → 20  
-- Plot **AIC vs k** → pick **aic_elbow_k**  
-- Plot **BIC vs k** → pick **bic_elbow_k**  
-- Use predict() to classify data for:
-  - **k = aic_elbow_k**
-  - **k = bic_elbow_k**
-- Print confusion matrix and accuracy (only if k = 3)
-- Answer:
-  - **Question 2a** — AIC interpretation  
-  - **Question 2b** — BIC interpretation
+- Use **Neural Network classifier** (MLPClassifier)  
+- Use **manual 2-fold cross-validation**  
+- Before printing each part’s results, print the part label:  
+  - `"Part 1:"`  
+  - `"Part 2: Random Oversampling"` etc.  
+- All confusion matrices must sum to the size of the dataset used  
+- All confusion matrices must be **clearly labeled**
 
-## Part 3 — Self-Organizing Map (SOM)
-- Normalize features to the range [0,1]
-- Train MiniSom maps of sizes:
-  - 3×3  
-  - 7×7  
-  - 15×15  
-  - 25×25  
-- Plot **U-Matrices**
-- Print **Quantization Error** for each
-- Plot **Q.E. vs Grid Size**
-- Answer:
-  - **Question 3a** — elbow grid size  
-  - **Question 3b** — effect of grid size on performance  
-  - **Question 3c** — best fit between 7×7 and 25×25
+---
 
+# **PART 1 — Baseline on Imbalanced Dataset**
+
+Using the provided **`imbalanced iris.csv`**:
+
+### ✔ Required Outputs:
+
+1. **Confusion Matrix** (labeled)  
+2. **Accuracy**  
+3. **Class Balanced Accuracy**  
+   - As defined in the *Imbalanced Datasets* lecture  
+4. **Balanced Accuracy (manual)**  
+   - Average of `Recall_i` for all classes  
+5. **Balanced Accuracy (sklearn)**  
+   ```python
+   balanced_accuracy_score(y_true, y_pred)
+   ```
+
+---
+
+### **Assignment 6 – Unsupervised Learning (K-Means, GMM, SOM)**  
+**Folder:** `MalekKchaou_Assignment6`
+
+This assignment applies three unsupervised machine learning methods to the Iris dataset:  
+**K-means**, **Gaussian Mixture Models**, and **Self-Organizing Maps (SOM)**.  
+You will determine how well each method clusters the data and whether the results support the hypothesis that there are **three species of iris** in Fisher’s dataset.  
+:contentReference[oaicite:1]{index=1}
+
+All clustering uses the **entire Iris dataset** (no train/test split), because this is **unsupervised learning**.
+
+---
+
+## 📌 Deliverables (Required in the ZIP File)
+
+- ✔ `Rubric 6.docx` with your name and ID (NOT a PDF)  
+- ✔ Python source code  
+- ✔ A **screen print** (Word/PDF) showing the outputs listed below  
+- ✔ All plots for Parts 1, 2, and 3  
+- ✔ Written answers to:
+  - Part 1 Question 1  
+  - Part 2 Questions 2a and 2b  
+  - Part 3 Questions 3a, 3b, 3c  
+
+---
+
+# **PART 1 — K-Means Clustering (k = 1 to 20)**
+
+### ✔ Required Program Outputs
+
+1. **Plot of reconstruction error vs k** (k = 1 → 20)  
+2. **Find elbow_k manually** (the “knee” of the curve)  
+3. **Use predict() with k = elbow_k**  
+   - Print **confusion matrix**  
+   - Print **accuracy** *only if elbow_k = 3*  
+     - (If elbow_k ≠ 3 → accuracy cannot be computed; print required message.)  
+4. **Use predict() with k = 3**  
+   - Print labeled **confusion matrix**  
+   - Print **accuracy**
+
+### ✔ Cluster-Label Matching Requirement  
+When k = 3, k-means assigns clusters arbitrarily.  
+You must relabel clusters such that diagonal sum of confusion matrix is maximized:  
+
+- Identify majority class per cluster  
+- Rearrange columns accordingly  
+
+(assignment references StackOverflow method)
+
+### ✔ Required Written Answer  
+**Question 1:** Based on elbow_k, are there **3 species** represented in the dataset?
+
+---
+
+# **PART 2 — Gaussian Mixture Models (GMM)**  
+Use GMM with **diag covariance_type** (required).
+
+### ✔ Required Program Outputs
+
+#### AIC Curve
+1. Run GMM for k = 1 → 20  
+2. Plot **AIC vs k**  
+3. Select **aic_elbow_k**  
+4. Predict labels using k = aic_elbow_k  
+   - Print confusion matrix  
+   - Print accuracy *only if aic_elbow_k = 3*  
+     - Otherwise: print required “Cannot calculate Accuracy Score…” message  
+
+#### BIC Curve
+5. Run GMM again (k = 1 → 20)  
+6. Plot **BIC vs k**  
+7. Select **bic_elbow_k**  
+8. Predict labels using k = bic_elbow_k  
+   - Print confusion matrix  
+   - Print accuracy *only if bic_elbow_k = 3*  
+
+### ✔ Required Written Answers  
+- **Question 2a:** Based on **AIC** elbow, are there 3 species?  
+- **Question 2b:** Based on **BIC** elbow, are there 3 species?
+
+---
+
+# **PART 3 — Self-Organizing Map (SOM)**  
+
+### ✔ Setup Requirements
+- Use **MiniSom** from:  
+  https://github.com/JustGlowing/minisom  
+- Normalize each feature to [0, 1] using:  
+  \[
+  f(x) = \frac{x - \min(x)}{\max(x) - \min(x)}
+  \]
+
+### ✔ Required Grid Sizes  
+Train SOMs with grid sizes:
+
+- **3×3**  
+- **7×7**  
+- **15×15**  
+- **25×25**
+
+### ✔ Required Program Outputs  
+
+For each grid size (4 total):
+
+1. **U-Matrix plot** (distance map)  
+2. **SOM response plot** with species markers  
+3. **Quantization Error**  
+
+Then produce:  
+4. **Plot: Quantization Error vs Grid Size**
+
+### ✔ Required Written Answers  
+- **Question 3a:** Based on QE elbow, which grid size should be selected?  
+- **Question 3b:** How does grid size affect SOM performance?  
+- **Question 3c:** Which grid (7×7 or 25×25) is a “perfect fit” and why?
+
+---
+
+## 📁 Folder Contents
+
+- `CompareClusters.py`  
+- `PlottingCode.py`  
+- `iris.csv`  
+- `EECS658_Coding_Assignment6_Written_Questions.pdf`  
+- `Rubric 6.docx`  
+- `Results&Plots/`
+  - `K-means_Reconstruction_Error_vs_k.png`
+  - `GMM_Reconstruction_Error_vs_k.png`
+  - `Part1&2_results.png`
+  - `Part3_results.png`
+  - `UMatrix_3x3.png`, `UMatrix_7x7.png`, `UMatrix_15x15.png`, `UMatrix_25x25.png`
+  - `QuantizationError_vs_GridSize.png`
+
+---
+
+## 🔧 How to Run
+
+```bash
+python CompareClusters.py
+```
 ---
 
 # Assignment 7 — Gridworld RL (Policy Iteration & Value Iteration)
 
-Implements the full 5×5 Gridworld per instructions.
+### **Assignment 7 – Reinforcement Learning: Policy Iteration & Value Iteration**  
+**Folder:** `MalekKchaou_Assignment7`
 
-## Part 1 — Policy Iteration  
-- Policy evaluation  
-- Policy improvement  
-- Print V at iterations 0, 1, 10, and final  
-- Convergence plot |Vᵏ − Vᵏ⁻¹|
+This assignment implements **Model-Based Reinforcement Learning** on a modified **5×5 Gridworld**.  
+You will implement **Policy Iteration** (Part 1) and **Value Iteration** (Part 2) to compute the optimal value function and the optimal policy π\*.  
+:contentReference[oaicite:1]{index=1}
 
-## Part 2 — Value Iteration  
-- Bellman optimality updates  
-- Print V at iterations 0, 1, 2, and final  
-- Extract optimal policy  
-- Convergence plot
+The Gridworld is identical to the version used in lecture, except it is **5×5 instead of 4×4**, with the two terminal states located at the **upper-left** and **lower-right** grey squares.
 
-Includes written answers for Questions 1–3.
+---
+
+## 📌 **Deliverables (as required in the instructions)**
+
+1. ✔ `Rubric7.docx` with your name and ID (do **not** submit as PDF)  
+2. ✔ All Python source code  
+3. ✔ A **screen print** showing successful execution of the code  
+4. ✔ Part 1 — Plot of error vs. t (with ε labeled)  
+5. ✔ Part 1 — Written answer to Question 1  
+6. ✔ Part 2 — Plot of error vs. t (with ε labeled)  
+7. ✔ Part 2 — Written answer to Question 2  
+8. ✔ Part 2 — Written answer to Question 3  
+
+---
+
+# **Gridworld Definition (Shared by Both Parts)**
+
+- Grid size: **5×5**  
+- States (s): 25 states numbered **0–24**  
+- Actions (a): `up`, `down`, `left`, `right`  
+- Rewards (r):
+  - `-1` for all transitions  
+  - `0` for entering a terminal state  
+  - `-1` for hitting a wall (state does not change)  
+- Transition probabilities:  
+  \[
+  p(r_{t+1} \mid s_t, a_t) = 0.25,\qquad
+  p(s_{t+1} \mid s_t, a_t) = 0.25
+  \]
+- Discount factor:  
+  \[
+  \gamma = 1
+  \]
+- Termination squares: **top-left** and **bottom-right**
+
+---
+
+# **PART 1 — Policy Iteration**
+
+Write a Python program that performs full **Policy Iteration**:
+
+### ✔ Required Program Behavior
+
+1. **Initialize**:
+   - Policy: can be arbitrary (e.g., random or all “right”)
+   - Value function: all zeros  
+2. **Policy Evaluation**:
+   - Update V(s) for the current policy  
+   - Print value grid at:
+     - Iteration **0**
+     - Iteration **1**
+     - Iteration **10**
+     - **Final iteration**  
+3. **Policy Improvement**:
+   - Update the policy by choosing the action that leads to the **largest V(s′)**  
+4. **Convergence Criterion**:
+   - Must implement a method of your choice (examples discussed in lecture)
+   - Must explain in **Question 1** why you chose this method  
+5. **Plot**:
+   - Error vs iteration:
+     \[
+     |V_k(s_n) - V_{k-1}(s_n)|
+     \]
+   - Label the ε threshold  
+
+### ✔ Required Output Format
+
+Print the policy grid π(s) using action symbols:
+
 
 
 
