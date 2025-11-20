@@ -386,14 +386,17 @@ def run_value_iteration():
         V = V_new.copy()
         errors.append(delta)
 
-        # Print intermediate results every iteration
-        print(f"Iteration {iteration}:")
-        print(V, "\n")
+        
 
         # Stop once updates are small
         if delta < theta:
+            print(f"FINAL iteration - Optimal Policy")
+            print(V, "\n")
             break
 
+        # Print intermediate results every iteration
+        print(f"Iteration {iteration}:")
+        print(V, "\n")
     return V, errors
 
 
