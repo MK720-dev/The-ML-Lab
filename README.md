@@ -156,7 +156,7 @@ Per the instructions, these metrics must also be computed by hand using the conf
 ```bash
 python CheckVersions.py
 python NBClassifier.py
-
+```
 ---
 
 ### **Assignment 2 – CompareMLModels (Seven Classifiers Using 2-Fold Cross-Validation)**  
@@ -224,43 +224,242 @@ Your written submission addresses:
 
 ```bash
 python CompareMLModels.py
+```
 
 ---
 
 # Assignment 3 — CompareMLModelsV2 & DBN
 
-## CompareMLModelsV2  
-Expands the model comparison to 12 ML models including  
-SVM, Decision Tree, Random Forest, ExtraTrees, and MLPClassifier  
-(as required in Assignment 3 instructions).
+### **Assignment 3 – CompareMLModelsV2 & Deep Belief Network (DBN)**  
+**Folder:** `MalekKchaou_Assignment3`
 
-## DBN Implementation  
-Includes `dbn.py` and the DBN folder. Outputs accuracy on MNIST.
-
-## Written answers  
-All answers (train/test sizes, class listing, CV usage, etc.) are included.
+This assignment expands the classifier comparison from Assignment 2 and adds a full Deep Belief Network (DBN) implementation trained on the MNIST handwritten digits dataset. It is divided into **two major parts**, each with its own code, outputs, and written answers.  
+:contentReference[oaicite:1]{index=1}
 
 ---
 
-# Assignment 4 — Feature Selection Techniques
+## **📌 Part 1 — CompareMLModelsV2 (12 Classifiers, 2-Fold Cross-Validation)**
 
-Implements four parts based on Assignment 4 instructions:
+You upgrade the previous CompareMLModels program to **CompareMLModelsV2**, adding five additional models and evaluating a total of **12 machine learning classifiers** using **manual 2-fold cross-validation** on the 150-sample Iris dataset.
 
-## Part 1  
-Baseline Decision Tree using original 4 iris features.
+### ✔ **Models Required (All 12)**  
+As specified in the assignment:
 
-## Part 2 — PCA  
-- Compute eigenvalues/eigenvectors  
-- Compute PoV and verify > 0.90  
-- Select transformed features for classification
+1. **Gaussian Naive Bayes** (`GaussianNB`)
+2. **Linear Regression**
+3. **Polynomial Regression (degree 2)**
+4. **Polynomial Regression (degree 3)**
+5. **k-Nearest Neighbors** (`KNeighborsClassifier`)
+6. **Linear Discriminant Analysis (LDA)**
+7. **Quadratic Discriminant Analysis (QDA)**
+8. **Support Vector Machine (Linear SVC)** (`svm.LinearSVC`)
+9. **Decision Tree** (`DecisionTreeClassifier`)
+10. **Random Forest** (`RandomForestClassifier`)
+11. **Extra Trees** (`ExtraTreesClassifier`)
+12. **Neural Network (MLPClassifier)**
 
-## Part 3 — Simulated Annealing  
-Runs 100 iterations with 1–2 random perturbations.
+### ✔ **Manual 2-Fold Cross-Validation (Strict Requirement)**  
+The scripts use 2-Fold Cross-Validation:
 
-## Part 4 — Genetic Algorithm  
-Runs 50 generations on initial populations defined in the instructions.
+- Split dataset into **Fold 1 (75 samples)** and **Fold 2 (75 samples)**  
+- Train on Fold 1 → Test on Fold 2  
+- Train on Fold 2 → Test on Fold 1  
+- Combine predictions → **150 total predictions**
 
-Includes all required outputs and PoV spreadsheet verification.
+### ✔ **Program Output**  
+For **each of the 12 models**, I printed:
+
+- A **clearly labeled confusion matrix**
+- **Accuracy**
+- Matrices must sum to **150**  
+  > If they do not, the assignment is considered incorrect.
+
+### ✔ **Written Questions Required**
+The PDF answers include answers to:
+
+1. **Which model is the best based on accuracy?**
+2. **For each of the 11 remaining models**, explain in detail:
+   - **Why the model performs worse than the best one**
+   - Explanations must be conceptual, not code-based  
+     (e.g., overfitting, linear assumptions, variance, instability, etc.)
+
+---
+
+## **📌 Part 2 — Deep Belief Network (DBN)**
+
+This part uses the **MNIST digit recognition** dataset and implements a Deep Belief Network based on the public GitHub repository:
+
+🔗 https://github.com/albertbup/deep-belief-network
+
+### ✔ **Required Setup Steps**
+Following assignment instructions strictly:
+
+1. Download the Deep Belief Network ZIP from GitHub.  
+2. Copy the **`dbn/` folder** into the same directory as your Python file.  
+3. Create a new file named **`dbn.py`** in that same directory.  
+4. Copy the code from the repository’s *Overview* section (from `import numpy as np` down to the final accuracy print).  
+5. Modify the import:  
+   - Use:  
+     ```python
+     from dbn import SupervisedDBNClassification
+     ```  
+   - And comment out:  
+     ```python
+     from dbn.tensorflow import SupervisedDBNClassification
+     ```
+6. Replace the deprecated import:  
+   ```python
+   from sklearn.metrics.classification import accuracy_score
+
+
+---
+
+### **Assignment 4 – Feature Selection (PCA, Simulated Annealing, Genetic Algorithm)**  
+**Folder:** `MalekKchaou_Assignment4`
+
+This assignment evaluates multiple dimensionality-reduction and feature-selection strategies on the Iris dataset using **2-fold cross-validation with a Decision Tree classifier**.  
+It contains **four major parts**: baseline, PCA, simulated annealing, and the genetic algorithm.  
+:contentReference[oaicite:1]{index=1}
+
+---
+
+## **📌 Deliverables (as required in the instructions)**
+
+- ✔ `CompareFeatureSelectionMethods.py` (main program)  
+- ✔ `Rubric 4.docx` (with name + ID filled in — *must not be submitted as PDF*)  
+- ✔ A **screen print** of the console output  
+  - Required — the grader does **not** run your code  
+- ✔ **PoV verification spreadsheet** (Part 2) in `.xlsx` format  
+- ✔ Written PDF answering Part 4 conceptual questions  
+- ✔ Screenshots for all parts (confusion matrices, accuracies, U-matrices, plots)
+
+---
+
+## **📌 Program Requirements (All Four Parts)**
+
+For **each part**, the program prints:
+
+- **Labeled Confusion Matrix**  
+- **Accuracy**  
+- **List of features used to generate that confusion matrix**
+
+This applies to **Parts 1, 2, 3, and 4**.
+
+---
+
+# **PART 1 — Baseline (No Dimensionality Reduction)**
+
+- Use the original four features:  
+  `sepal-length, sepal-width, petal-length, petal-width`  
+- Perform **2-fold cross-validation** with a Decision Tree  
+- Print:  
+  - Confusion matrix  
+  - Accuracy  
+  - List of used features (the 4 original ones)
+
+---
+
+# **PART 2 — PCA Feature Transformation**
+
+This part follows the “PCA Feature Transformation” lecture slides.
+
+### ✔ Steps Required:
+
+1. Compute PCA on the original 4 features → produce transformed features:  
+   **z1, z2, z3, z4**
+2. Display:
+   - **Eigenvalues matrix**
+   - **Eigenvectors matrix**  
+3. Compute **PoV (Proportion of Variance)** using the eigenvalues  
+4. Select the smallest subset of transformed features such that:  
+   **PoV > 0.90**
+5. Perform 2-fold CV using only the selected components  
+6. Print:
+   - Selected PCA components  
+   - PoV  
+   - Confusion matrix  
+   - Accuracy  
+
+### ✔ Additional Deliverable  
+- **PoV verification** using the eigenvalues in an `.xlsx` spreadsheet  
+  (per instructions, “Deliverable 4 (PoV) Example” on Canvas)
+
+---
+
+# **PART 3 — Simulated Annealing over 8 Features**
+
+Feature space =  
+4 original features + 4 PCA features from Part 2 → **8 total features**.
+
+### ✔ Required Settings:
+
+- **iterations = 100**  
+- **Perturb with 1 or 2 randomly selected parameters**  
+  - Because 1–5% of 8 features < 1  
+- Acceptance probability:  
+  \[
+  \Pr[\text{accept}] = e^{-\Delta / c},\quad c = 1
+  \]
+- Restart after **10** consecutive discarded iterations
+
+### ✔ For *each iteration*, program MUST print:
+
+- Current subset of features  
+- Accuracy  
+- Acceptance probability  
+- Random uniform number  
+- Status: **Improved**, **Accepted**, **Discarded**, or **Restart**
+
+### ✔ End of Part 3:
+- Best feature set discovered  
+- Final confusion matrix  
+- Final accuracy  
+- List of chosen features
+
+---
+
+# **PART 4 — Genetic Algorithm (GA)**
+
+GA searches the **same 8-feature space** as Part 3.
+
+### ✔ Required Initial Population (exactly as specified):
+
+1. `{z1, sepal-length, sepal-width, petal-length, petal-width}`  
+2. `{z1, z2, sepal-width, petal-length, petal-width}`  
+3. `{z1, z2, z3, sepal-width, petal-length}`  
+4. `{z1, z2, z3, z4, sepal-width}`  
+5. `{z1, z2, z3, z4, sepal-length}`  
+
+### ✔ Required GA Parameters:
+- **50 generations**  
+- At the end of **each generation**, print the **five best** feature sets with:
+  - Their feature lists  
+  - Their accuracies  
+  - The generation number  
+
+### ✔ End of Part 4:
+- Best feature set found by the GA  
+- Final confusion matrix  
+- Final accuracy  
+
+---
+
+# **Required Written Questions (PDF)**  
+Assignment Folder includes answers to following questions (a)–(f):
+
+a. Which dimensionality reduction method (PCA, SA, GA) performed best?  
+b. Why did the other two perform worse?  
+c. Did the best method outperform using all 4 original features? Why/why not?  
+d. Did PCA and simulated annealing select the same features? Explain.  
+e. Did PCA and GA select the same features? Explain.  
+f. Did SA and GA select the same features? Why/why not?
+
+
+## **How to Run**
+
+```bash
+python CompareFeatureSelectionMethods.py
+```
 
 ---
 
