@@ -83,7 +83,7 @@ The-ML-Lab/
     └── results/
 ```
 
-# Important: Navigate to respective assignment section for code details.
+# Assignment Details:
 
 ### **Assignment 1 – Environment Verification & Naive Bayes Classifier**  
 **Folder:** `MalekKchaou_Assignment1`
