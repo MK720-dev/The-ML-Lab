@@ -24,7 +24,7 @@ This assignment implements:
 
 ### ✔ Part 1: CheckVersions  
 Prints the versions of Python, SciPy, NumPy, Pandas, and scikit-learn  
-(as required in Assignment 1 instructions :contentReference[oaicite:0]{index=0}).
+(as required in Assignment 1 instructions).
 
 ### ✔ Part 2: NBClassifier  
 Implements 2-fold cross-validation on the iris dataset using GaussianNB and prints:
