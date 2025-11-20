@@ -83,36 +83,147 @@ The-ML-Lab/
     └── results/
 ```
 
-# Assignment 1 — CheckVersions & NBClassifier
+# Important: Navigate to respective assignment section for code details.
 
-This assignment implements:
+### **Assignment 1 – Environment Verification & Naive Bayes Classifier**  
+**Folder:** `MalekKchaou_Assignment1`
 
-## Part 1: CheckVersions  
-Prints the versions of Python, SciPy, NumPy, Pandas, and scikit-learn  
-(as required in Assignment 1 instructions).
+This assignment validates the Python/ML environment and implements a complete 2-fold cross-validated **Gaussian Naive Bayes classifier** on the Iris dataset. It is the introductory programming assignment for EECS 658.
 
-## Part 2: NBClassifier  
-Implements 2-fold cross-validation on the iris dataset using GaussianNB and prints:
+#### **Deliverables (as specified in the assignment instructions)**  
+The folder contains everything required by the assignment:
 
-- Accuracy  
-- Confusion matrix  
-- Precision, Recall, F1 for each iris class  
+- ✔ `CheckVersions.py`  
+  Prints versions of:
+  - Python  
+  - SciPy  
+  - NumPy  
+  - Pandas  
+  - scikit-learn  
+  …and prints **“Hello World!”**
+- ✔ Console screenshot or run output demonstrating successful execution  
+- ✔ `NBClassifier.py`  
+  Implements **manual 2-fold cross-validation** (not using sklearn’s KFold).  
+- ✔ Screenshot of NBClassifier execution  
+- ✔ Written calculations (accuracy, precision, recall, F1)  
+  - These metrics must be computed manually from the confusion matrix and compared to the program’s output.
 
-All calculations match the rubric requirements.
+#### **What the Program Does**
+
+**1. Environment verification**  
+`CheckVersions.py` confirms installation of:
+
+- Python  
+- SciPy  
+- NumPy  
+- Pandas  
+- scikit-learn  
+
+and prints version numbers exactly as required by the assignment.
+
+**2. Manual 2-fold cross-validation**  
+The program:
+
+- Splits the dataset into **Fold 1** (75 samples) and **Fold 2** (75 samples)  
+- Train on Fold 1 → Test on Fold 2  
+- Train on Fold 2 → Test on Fold 1  
+- Combines predictions to produce **150 predictions** (for the full dataset)
+
+**3. Evaluate Gaussian Naive Bayes**  
+Outputs:
+
+- Confusion matrix (must sum to **150**)  
+- Overall accuracy  
+- Precision for each class  
+- Recall for each class  
+- F1 score for each class  
+
+**4. Manual metric verification**  
+Per the instructions, these metrics must also be computed by hand using the confusion matrix and validated against program output.
+
+#### **Skills Demonstrated**
+
+- Setting up a Python ML environment  
+- Verifying scientific packages  
+- Manual k-fold cross-validation logic  
+- Loading and using the Iris dataset  
+- Running Gaussian Naive Bayes  
+- Understanding classification metrics  
+- Connecting confusion matrix values to derived metrics  
+
+#### **How to Run**
+
+```bash
+python CheckVersions.py
+python NBClassifier.py
 
 ---
 
-# Assignment 2 — CompareMLModels
+### **Assignment 2 – CompareMLModels (Seven Classifiers Using 2-Fold Cross-Validation)**  
+**Folder:** `MalekKchaou_Assignment2`
 
-Implements 2-fold CV across seven models (LinearReg, Poly2, Poly3, NB, kNN, LDA, QDA) per Assignment 2 specifications.
+This assignment implements and compares seven classical machine learning models using **manual 2-fold cross-validation** on the Iris dataset. The goal is to evaluate model performance (confusion matrices + accuracy) and answer conceptual questions about why some models outperform others.
 
-For each model, the program prints:
+#### **Deliverables (as required by the assignment instructions)**  
+The assignment folder contains:
 
-- Confusion matrix  
-- Accuracy  
-- Label identifying the model currently being evaluated  
+- ✔ `CompareMLModels.py` (main program)
+- ✔ `EECS658_Assignment2.pdf` (problem statement)
+- ✔ `Rubric 2.docx` with name + ID filled in
+- ✔ Output screenshot(s) showing program execution  
+  - A screen print **is required** (the grader does *not* run your code)
+- ✔ Written answers for:
+  - **a.** Which model is best based on accuracy?  
+  - **b.** Why each of the remaining 6 performs worse than the best model?
 
-All confusion matrices sum to 150 samples as required.
+#### **Models Implemented (exactly as required)**
+The program compares the following classifiers:
+
+1. **Linear Regression** (`LinearRegression`)
+2. **Polynomial Regression (degree 2)**  
+   - Using `LinearRegression` with polynomial feature expansion
+3. **Polynomial Regression (degree 3)`**
+4. **Gaussian Naive Bayes** (`GaussianNB`)
+5. **k-Nearest Neighbors** (`KNeighborsClassifier`)
+6. **Linear Discriminant Analysis** (`LinearDiscriminantAnalysis`)
+7. **Quadratic Discriminant Analysis** (`QuadraticDiscriminantAnalysis`)
+
+#### **Manual 2-Fold Cross-Validation Procedure**
+The script uses 2-fold CV:
+
+1. Split dataset into **Fold 1** (75 samples) and **Fold 2** (75 samples)
+2. Train model on Fold 1 → Test on Fold 2  
+3. Train model on Fold 2 → Test on Fold 1  
+4. Concatenate predictions → **150 total test predictions**
+
+For **each** model, the program prints:
+
+- A labeled **confusion matrix**  
+  - MUST sum to **150**
+- **Accuracy**
+
+#### **Questions Answered in the Report**
+Your written submission addresses:
+
+1. **Which model has the highest accuracy?**  
+   - Based on the confusion matrices + accuracy printed by the program.
+2. **Why each of the six remaining models performs worse than the best one**  
+   - Requires conceptual reasoning:
+     - e.g., overfitting of polynomial regression, sensitivity of kNN, Gaussian assumptions, linearity limits, etc.
+
+#### **Skills Demonstrated**
+
+- Manual implementation of 2-fold cross-validation  
+- Use of multiple classification algorithms in scikit-learn  
+- Treating regression models as classifiers (via rounding or argmax of outputs)  
+- Confusion matrix interpretation  
+- Accuracy evaluation and comparison  
+- Clear code organization and commenting (required by the rubric)
+
+#### **How to Run**
+
+```bash
+python CompareMLModels.py
 
 ---
 
