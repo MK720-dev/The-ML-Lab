@@ -18,6 +18,71 @@
 
 </p>
 
+# Repository Structure
+
+The-ML-Lab/
+│
+├── README.md
+├── LICENSE
+├── assets/
+│   ├── banner.svg
+│   └── logo.svg
+│
+├── Assignment1_CheckVersions_NBClassifier/
+│   ├── README.md
+│   ├── CheckVersions.py
+│   ├── NBClassifier.py
+│   ├── iris.csv
+│   ├── Rubric 1.docx
+│   └── results/
+│
+├── Assignment2_CompareMLModels/
+│   ├── README.md
+│   ├── CompareMLModels.py
+│   ├── iris.csv
+│   ├── EECS658_Assignment2.pdf
+│   ├── Rubric 2.docx
+│   └── results/
+│
+├── Assignment3_ModelComparisonV2_DBN/
+│   ├── README.md
+│   ├── CompareMLModelsV2.py
+│   ├── dbn.py
+│   ├── dbn/
+│   ├── iris.csv
+│   ├── Rubric 3.docx
+│   └── results/
+│
+├── Assignment4_PCA_SA_GA/
+│   ├── README.md
+│   ├── CompareFeatureSelectionMethods.py
+│   ├── iris.csv
+│   ├── PoV.xlsx
+│   ├── Rubric 4.docx
+│   └── results/
+│
+├── Assignment5_ImbalancedLearning/
+│   ├── README.md
+│   ├── ImbalancedIris.py
+│   ├── imbalanced iris.csv
+│   ├── Rubric 5.docx
+│   └── results/
+│
+├── Assignment6_UnsupervisedClustering/
+│   ├── README.md
+│   ├── CompareClusters.py
+│   ├── PlottingCode.py
+│   ├── iris.csv
+│   ├── Rubric 6.docx
+│   └── plots/
+│
+└── Assignment7_Gridworld_RL/
+    ├── README.md
+    ├── GridWorld.py
+    ├── Rubric 7.docx
+    └── results/
+
+
 # Assignment 1 — CheckVersions & NBClassifier
 
 This assignment implements:
