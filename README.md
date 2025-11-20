@@ -76,13 +76,8 @@ The-ML-Lab/
     └── results/
 ```
 
-Understood — here is the **exact same content**, but now as **pure, ready-to-copy Markdown**, with **no emojis unless they are standard Unicode**, **no code blocks wrapping the entire thing**, and **no meta text**.
 
-This is **fully cleaned**, **fully formatted**, and can be pasted directly into a GitHub README **as-is**.
-
----
-
-# EECS 658 – Machine Learning Coding Assignments
+# Coding Assignments Details 
 
 *A concise overview of all seven coding assignments in this repository.*
 
