@@ -22,11 +22,11 @@
 
 This assignment implements:
 
-### Part 1: CheckVersions  
+## Part 1: CheckVersions  
 Prints the versions of Python, SciPy, NumPy, Pandas, and scikit-learn  
 (as required in Assignment 1 instructions).
 
-### Part 2: NBClassifier  
+## Part 2: NBClassifier  
 Implements 2-fold cross-validation on the iris dataset using GaussianNB and prints:
 
 - Accuracy  
@@ -53,15 +53,15 @@ All confusion matrices sum to 150 samples as required.
 
 # Assignment 3 — CompareMLModelsV2 & DBN
 
-### ✔ CompareMLModelsV2  
+## CompareMLModelsV2  
 Expands the model comparison to 12 ML models including  
 SVM, Decision Tree, Random Forest, ExtraTrees, and MLPClassifier  
 (as required in Assignment 3 instructions).
 
-### ✔ DBN Implementation  
+## DBN Implementation  
 Includes `dbn.py` and the DBN folder. Outputs accuracy on MNIST.
 
-### ✔ Written answers  
+## Written answers  
 All answers (train/test sizes, class listing, CV usage, etc.) are included.
 
 ---
