@@ -35,6 +35,8 @@ Implements 2-fold cross-validation on the iris dataset using GaussianNB and prin
 
 All calculations match the rubric requirements.
 
+---
+
 # Assignment 2 — CompareMLModels
 
 Implements 2-fold CV across seven models (LinearReg, Poly2, Poly3, NB, kNN, LDA, QDA) per Assignment 2 specifications :contentReference[oaicite:1]{index=1}.
@@ -46,6 +48,8 @@ For each model, the program prints:
 - Label identifying the model currently being evaluated  
 
 All confusion matrices sum to 150 samples as required.
+
+---
 
 # Assignment 3 — CompareMLModelsV2 & DBN
 
@@ -59,6 +63,8 @@ Includes `dbn.py` and the DBN folder. Outputs accuracy on MNIST.
 
 ### ✔ Written answers  
 All answers (train/test sizes, class listing, CV usage, etc.) are included.
+
+---
 
 # Assignment 4 — Feature Selection Techniques
 
@@ -80,6 +86,8 @@ Runs 50 generations on initial populations defined in the instructions.
 
 Includes all required outputs and PoV spreadsheet verification.
 
+---
+
 # Assignment 5 — Imbalanced Iris Dataset
 
 Follows Assignment 5 specifications :contentReference[oaicite:4]{index=4}.
@@ -95,19 +103,53 @@ Random undersampling, ClusterCentroids, Tomek Links.
 
 Each section prints labeled confusion matrices and accuracy.
 
-# Assignment 6 — Optimizer Arena & PCA Weight Visualization
+---
 
-This assignment includes:
+# Assignment 6 — Unsupervised Machine Learning (K-Means, GMM, SOM)
 
-- Custom neural network training library  
-- BFGS, Adam, SGD implementations  
-- Loss surface sampling  
-- PCA of weight trajectories  
-- 2D/3D visualizations  
-- Cross entropy for binary classification  
-- Clean implementation without nested loops
+This assignment follows the official EECS 658 instructions exactly.  
+It investigates unsupervised clustering approaches applied to the Iris dataset.
 
-Includes all plots, reconstruction error logic, and comparative optimizer performance.
+---
+
+## 📌 Part 1 — K-Means Clustering
+- Run K-Means for k = 1 → 20  
+- Plot **reconstruction error vs k**  
+- Identify **elbow_k** manually  
+- Use predict() with clusters for:
+  - **k = elbow_k**
+  - **k = 3**
+- Print confusion matrix and accuracy (only if k = 3)
+- Answer **Question 1** about number of species implied by elbow_k
+
+## 📌 Part 2 — Gaussian Mixture Models (GMM)
+- Run GMM for k = 1 → 20  
+- Plot **AIC vs k** → pick **aic_elbow_k**  
+- Plot **BIC vs k** → pick **bic_elbow_k**  
+- Use predict() to classify data for:
+  - **k = aic_elbow_k**
+  - **k = bic_elbow_k**
+- Print confusion matrix and accuracy (only if k = 3)
+- Answer:
+  - **Question 2a** — AIC interpretation  
+  - **Question 2b** — BIC interpretation
+
+## 📌 Part 3 — Self-Organizing Map (SOM)
+- Normalize features to the range [0,1]
+- Train MiniSom maps of sizes:
+  - 3×3  
+  - 7×7  
+  - 15×15  
+  - 25×25  
+- Plot **U-Matrices**
+- Print **Quantization Error** for each
+- Plot **Q.E. vs Grid Size**
+- Answer:
+  - **Question 3a** — elbow grid size  
+  - **Question 3b** — effect of grid size on performance  
+  - **Question 3c** — best fit between 7×7 and 25×25
+
+---
 
 # Assignment 7 — Gridworld RL (Policy Iteration & Value Iteration)
 
